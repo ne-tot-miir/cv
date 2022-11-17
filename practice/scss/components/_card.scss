@@ -1,0 +1,125 @@
+.row {
+   max-width: 100rem;
+   margin: 0 auto;
+   margin-top: 10rem;
+
+   &:not(:last-child) {
+      margin-bottom: $float-margin-vertical;
+   }
+
+   @include clearfix;
+
+   [class^=col-] {
+      float: left;
+
+      &:not(:last-child) {
+         margin-right: $float-margin-horizontal;
+      }
+
+   }
+}
+
+.col-1-of-3 {
+   width: calc((100% - 2 * #{$float-margin-horizontal}) / 3);
+}
+
+.card {
+   perspective: 150rem;
+   -moz-perspective: 150rem;
+   position: relative;
+   height: 52rem;
+
+   &:hover &__side-1 {
+      transform: rotateY(-180deg);
+   }
+
+   &:hover &__side-2 {
+      transform: rotateY(0);
+   }
+
+   &__side-1 {
+      height: 52rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      backface-visibility: hidden;
+      overflow: hidden;
+      box-shadow: 0 1.5rem 6rem rgba($color-black, .15);
+
+      transition: all .8s ease;
+
+      background-color: $color-2-light;
+      padding: 2rem;
+      border-radius: 5rem;
+
+
+   }
+
+   &__decor {
+      width: 100%;
+      height: 90%;
+      border-radius: 5rem;
+      overflow: hidden;
+   }
+
+   &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+   }
+
+
+   &__header {
+      text-align: center;
+      margin: 2rem 2rem 1rem 2rem;
+      font-size: 2rem;
+      color: $color-1;
+   }
+
+   &__side-2 {
+
+      height: 52rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      backface-visibility: hidden;
+      overflow: hidden;
+      box-shadow: 0 1.5rem 6rem rgba($color-black, .15);
+
+      transition: all .8s ease;
+
+      background-color: $color-1;
+      padding: 5rem;
+      border-radius: 5rem;
+
+      transform: rotateY(180deg);
+
+      color: #fff;
+      font-size: 1.4rem;
+
+
+   }
+}
+
+.btn {
+   display: inline-block;
+   background-color: $color-2-light;
+   padding: 1rem 2.5rem;
+   margin: 3rem 5rem;
+   border-radius: 3rem;
+   text-decoration: none;
+   text-align: center;
+   color: $color-1;
+   font-size: 1.6rem;
+   transition: all 0.3s;
+
+   &:hover {
+      transform: scale(1.2);
+   }
+
+   &:active {
+
+      transform: scale(1.2) translateY(3px);
+   }
+}
