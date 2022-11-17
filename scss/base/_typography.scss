@@ -1,0 +1,14 @@
+body {
+   font-family: Antic Didone;
+   font-size: $primary-font-size;
+   line-height: 1.4;
+   letter-spacing: 0.1rem;
+   font-weight: 600;
+}
+
+.heading-primary {
+   text-align: center;
+   margin: 8rem;
+   font-size: 6rem;
+   color: $color-1;
+}
